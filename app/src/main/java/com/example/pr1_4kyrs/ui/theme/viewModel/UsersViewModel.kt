@@ -12,9 +12,9 @@ class UsersViewModel : ViewModel(){
             val responce = RetrofitClient.apiService.getUser()
             for (user in responce.users){
                 Log.d("", "-------------------------")
-                Log.d("UsersResponce", "Имя - ${user.firstName}, фамилия - ${user.lastName}")
-                Log.d("UsersResponce", "email - ${user.email}")
-                Log.d("UsersResponce", "birthDate - ${user.birthDate}")
+                Log.d("UsersResponce", "Имя - ${user.firstName}, Фамилия - ${user.lastName}")
+                Log.d("UsersResponce", "UserName - ${user.username}")
+                Log.d("UsersResponce", "Role - ${user.role}")
             }
         }
     }
