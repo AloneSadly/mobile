@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 class UsersViewModel : ViewModel(){
     fun loadUsers(){
         viewModelScope.launch{
-            val responce = RetrofitClient.apiService.getUser()
+            val responce = RetrofitClient.apiUserService.getUser()
             for (user in responce.users){
                 Log.d("", "-------------------------")
                 Log.d("UsersResponce", "Имя - ${user.firstName}, Фамилия - ${user.lastName}")

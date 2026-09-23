@@ -1,5 +1,6 @@
 package com.example.pr1_4kyrs.ui.theme.objects
 
+import com.example.pr1_4kyrs.ui.theme.`interface`.ProductService
 import com.example.pr1_4kyrs.ui.theme.`interface`.UserService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -18,5 +19,6 @@ object RetrofitClient {
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-    val apiService: UserService = retrofit.create(UserService::class.java)
+    val apiUserService: UserService = retrofit.create(UserService::class.java)
+    val apiProductService: ProductService = retrofit.create(ProductService::class.java)
 }

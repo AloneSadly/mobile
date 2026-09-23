@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.pr1_4kyrs.ui.theme.PR1_4kyrsTheme
+import com.example.pr1_4kyrs.ui.theme.viewModel.ProductViewModel
 import com.example.pr1_4kyrs.ui.theme.viewModel.UsersViewModel
 
 class MainActivity : ComponentActivity() {
@@ -36,8 +37,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = ""
     )
-    val userViewModel = UsersViewModel()
-    userViewModel.loadUsers()
+//    val userViewModel = UsersViewModel()
+//    userViewModel.loadUsers()
+    val productViewModel = ProductViewModel()
+    productViewModel.loadProduct()
 }
 
 @Preview(showBackground = true)
