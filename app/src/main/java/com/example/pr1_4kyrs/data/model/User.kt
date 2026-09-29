@@ -1,4 +1,4 @@
-package com.example.pr1_4kyrs.ui.theme.data
+package com.example.pr1_4kyrs.data.model
 
 data class User(
     val firstName: String,

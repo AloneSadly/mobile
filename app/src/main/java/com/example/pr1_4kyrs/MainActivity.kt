@@ -4,16 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.pr1_4kyrs.data.model.Dimension
+import com.example.pr1_4kyrs.data.model.Product
 import com.example.pr1_4kyrs.ui.theme.PR1_4kyrsTheme
 import com.example.pr1_4kyrs.ui.theme.viewModel.ProductViewModel
-import com.example.pr1_4kyrs.ui.theme.viewModel.UsersViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,32 +16,27 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PR1_4kyrsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val productt = Product(
+                    title = "Робот-пылесос CleanBot Max",
+                    price = 33600.00,
+                    dimensions = Dimension(
+                        350.00,
+                        350.00,
+                        95.00,
+                    ),
+                    weight = 4
+                )
+//                val userViewModel = UsersViewModel()
+//                userViewModel.loadUsers()
+
+
+
+                    val createProductViewModel:ProductViewModel = viewModel()
+                    createProductViewModel.createProduct(productt)
+
+//                    val loadProductViewModel = ProductViewModel()
+//                    loadProductViewModel.loadProduct()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = ""
-    )
-//    val userViewModel = UsersViewModel()
-//    userViewModel.loadUsers()
-    val productViewModel = ProductViewModel()
-    productViewModel.loadProduct()
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PR1_4kyrsTheme {
-        Greeting("")
     }
 }

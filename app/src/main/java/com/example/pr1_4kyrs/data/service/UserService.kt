@@ -1,6 +1,6 @@
-package com.example.pr1_4kyrs.ui.theme.`interface`
+package com.example.pr1_4kyrs.data.service
 
-import com.example.pr1_4kyrs.ui.theme.data.UsersResponce
+import com.example.pr1_4kyrs.data.model.UsersResponce
 import retrofit2.http.*
 
 interface UserService {
