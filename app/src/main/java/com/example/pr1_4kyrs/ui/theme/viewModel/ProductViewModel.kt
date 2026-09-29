@@ -31,26 +31,4 @@ class ProductViewModel: ViewModel(){
             }
         }
     }
-    fun loadProduct (){
-        viewModelScope.launch {
-            try {
-                val resp = RetrofitClient.apiProductService.getProduct()
-
-                for (productss in resp.products) {
-
-                        Log.d("-", "------------------------------")
-                        Log.d("ProductsResponce", "Title - ${productss.title}")
-                        Log.d(
-                            "ProductsResponce",
-                            "Height - ${productss.dimensions.height},\nDepth - ${productss.dimensions.depth},\nWidth - ${productss.dimensions.width} "
-                        )
-                        Log.d("ProductsResponce", "Weight - ${productss.weight}")
-                        Log.d("ProductsResponce", "Price - ${productss.price}")
-                    }
-
-            }catch (ex: Exception){
-                Log.d("ERROR___", "${ex.message}")
-            }
-        }
-    }
 }

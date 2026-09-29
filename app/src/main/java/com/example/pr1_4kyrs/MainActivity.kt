@@ -29,13 +29,8 @@ class MainActivity : ComponentActivity() {
 //                val userViewModel = UsersViewModel()
 //                userViewModel.loadUsers()
 
-
-
                     val createProductViewModel:ProductViewModel = viewModel()
                     createProductViewModel.createProduct(productt)
-
-//                    val loadProductViewModel = ProductViewModel()
-//                    loadProductViewModel.loadProduct()
             }
         }
     }
