@@ -1,7 +1,6 @@
 package com.example.pr1_4kyrs.data.model
 
 data class Recipes(
-    val id: Int? = null,
     val name: String,
     val ingredients: List<String>,
     val cookTimeMinutes: Int,

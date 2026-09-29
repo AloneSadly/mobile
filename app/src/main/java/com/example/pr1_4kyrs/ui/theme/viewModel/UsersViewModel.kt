@@ -24,4 +24,15 @@ class UsersViewModel : ViewModel(){
             }
         }
     }
+    fun deleteUsers(id: Int){
+        viewModelScope.launch {
+            try {
+                val resp = RetrofitClient.apiUserService
+                resp.deleteUser(id)
+
+            }catch (ex: Exception){
+                Log.d("ERROR_loadUsers", "${ex.message}")
+            }
+        }
+    }
 }
