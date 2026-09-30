@@ -30,17 +30,16 @@ class MainActivity : ComponentActivity() {
 //                  weight = 4
 //              )
                 val userViewModel: UsersViewModel = viewModel()
-////            userViewModel.loadUsers()
+//              userViewModel.loadUsers()
                 userViewModel.deleteUsers(15)
 
 //
 //              val createProductViewModel:ProductViewModel = viewModel()
 //              createProductViewModel.createProduct(productt)
 
-                val ingridients = listOf("Куриное филе", "сливки", "чеснок", "сливочное масло", "растительное масло", "твердый сыр", "соль", "черный перец", "итальянские травы")
-                val recipes = Recipes("Куриное филе в сливочно-чесночном соусе",ingridients,25, "Легко")
+
                 val updateRecipesViewModel: RecipesViewModel = viewModel()
-                updateRecipesViewModel.updateRecipes(11, recipes)
+                updateRecipesViewModel.updateRecipes(11)
 
 
 

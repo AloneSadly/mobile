@@ -10,5 +10,5 @@ interface UserService {
 
 
     @DELETE("users/{id}")
-    suspend fun deleteUser(@Path("id") id: Int): User
+    suspend fun deleteUser(@Path("id") id: Int)
 }
