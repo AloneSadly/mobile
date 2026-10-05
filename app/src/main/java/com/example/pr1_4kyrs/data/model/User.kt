@@ -5,5 +5,7 @@ data class User(
     val firstName: String,
     val lastName: String,
     val username: String,
-    val role: String
+    val role: String,
+    val isDeleted: Boolean = false,
+    val deletedOn: String? = null
 )
