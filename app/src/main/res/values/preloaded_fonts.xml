@@ -4,6 +4,8 @@
         <item>@font/gelasio_medium_italic</item>
         <item>@font/gelasio_semibold</item>
         <item>@font/gelasio_semibold_italic</item>
+        <item>@font/merriweather</item>
+        <item>@font/merriweather_bold</item>
         <item>@font/nunito_sans</item>
     </array>
 </resources>

@@ -30,6 +30,7 @@ import com.example.pr1_4kyrs.ui.theme.Black
 import com.example.pr1_4kyrs.ui.theme.Black3
 import com.example.pr1_4kyrs.ui.theme.Gray
 import com.example.pr1_4kyrs.ui.theme.InputBg
+import com.example.pr1_4kyrs.ui.theme.White
 
 @Composable
 fun InputFieldText(
@@ -60,14 +61,11 @@ fun InputFieldText(
             value = value,
             onValueChange = onValueChange,
             singleLine = true,
-            visualTransformation = visualTransformation,
+            visualTransformation = VisualTransformation.None,
             trailingIcon = trailingIcon,
-            placeholder = {
-                Text(text = placeholder, color = Gray, fontSize = 16.sp)
-            },
             colors = OutlinedTextFieldDefaults.colors(
-                focusedContainerColor = InputBg,
-                unfocusedContainerColor = InputBg,
+                focusedContainerColor = White,
+                unfocusedContainerColor = White,
                 focusedBorderColor = Color.Transparent,
                 unfocusedBorderColor = Color.Transparent,
                 cursorColor = InputBg,
