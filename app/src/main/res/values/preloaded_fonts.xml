@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/gelasio</item>
         <item>@font/gelasio_medium_italic</item>
         <item>@font/gelasio_semibold</item>
         <item>@font/gelasio_semibold_italic</item>

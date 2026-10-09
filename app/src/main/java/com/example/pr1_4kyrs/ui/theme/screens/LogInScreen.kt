@@ -38,6 +38,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.pr1_4kyrs.R
 import com.example.pr1_4kyrs.ui.theme.White
+import com.example.pr1_4kyrs.ui.theme.components.buttons.MainButton
+import com.example.pr1_4kyrs.ui.theme.components.texts.ClickableText
 import com.example.pr1_4kyrs.ui.theme.components.texts.InputFieldText
 
 @Composable
@@ -72,38 +74,33 @@ fun LogInScreen(modifier: Modifier = Modifier) {
             )
         }
         Spacer(modifier = Modifier.weight(0.1f))
-        Box(
 
-        ){
-            Text(
-                text = buildAnnotatedString {
-                    withStyle(style = SpanStyle(
-                        fontFamily = FontFamily(Font(R.font.merriweather)),
-                        fontWeight = FontWeight.Normal,
-                        fontSize = 30.sp,
-                        color = Color(0xFF909090)
-                    )) {
-                        append("Hello !\n")
-                    }
-                    withStyle(style = SpanStyle(
-                        fontFamily = FontFamily(Font(R.font.merriweather_bold)),
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 24.sp,
-                        color = Color(0xFF303030),
-                        letterSpacing = 1.2.sp
-                    )) {
-                        append("WELCOME BACK")
-                    }
-                },
-                style = TextStyle(lineHeight = 45.sp),
-                modifier = Modifier.padding(start = 30.dp)
-            )
-        }
+        Text(
+            text = buildAnnotatedString {
+                withStyle(style = SpanStyle(
+                    fontFamily = FontFamily(Font(R.font.merriweather)),
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 30.sp,
+                    color = Color(0xFF909090)
+                )) {
+                    append("Hello !\n")
+                }
+                withStyle(style = SpanStyle(
+                    fontFamily = FontFamily(Font(R.font.merriweather_bold)),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    color = Color(0xFF303030),
+                    letterSpacing = 1.2.sp
+                )) {
+                    append("WELCOME BACK")
+                } },
+            style = TextStyle(lineHeight = 45.sp),
+            modifier = Modifier.padding(start = 30.dp)
+        )
         Spacer(modifier = Modifier.height(25.dp))
         ElevatedCard(modifier = Modifier
             .width(345.dp)
-            .heightIn(min = 437.dp)
-            .padding(start = 4.dp),
+            .heightIn(min = 437.dp),
             shape = RoundedCornerShape(4.dp),
             colors = CardDefaults.elevatedCardColors(
                 containerColor = White
@@ -112,26 +109,45 @@ fun LogInScreen(modifier: Modifier = Modifier) {
                 defaultElevation = 12.dp
             )){
             Column(
-                modifier = Modifier.padding(start = 30.dp).fillMaxSize()
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Spacer(modifier = Modifier.height(35.dp))
+
                 InputFieldText(
+                    modifier = modifier.padding(horizontal = 30.dp),
                     value = email,
                     onValueChange = { email = it },
                     label = "Email",
-                    placeholder = "",
-                    onClick = {},
                     visualTransformation = VisualTransformation.None,
                     trailingIcon = null
                 )
-                Spacer(modifier = Modifier.height(30.dp))
+                Spacer(modifier = Modifier.height(35.dp))
                 InputFieldText(
+                    modifier = modifier.padding(horizontal = 30.dp),
                     value = password,
                     onValueChange = { password = it },
                     label = "Password",
-                    placeholder = "",
-                    onClick = {},
                     visualTransformation = VisualTransformation.None,
-                    trailingIcon = null
+                )
+                Spacer(modifier = Modifier.height(35.dp))
+                ClickableText(
+                    text = "Forgot Password",
+                    onClick = {},
+                    fontSize = 18
+                )
+                Spacer(modifier = Modifier.height(40.dp))
+                MainButton(
+                    modifier = Modifier.fillMaxWidth().padding(start = 30.dp,end = 30.dp).height(50.dp),
+                    textInButton = "Log in",
+                    textFontSize = 18,
+                    enabled = true
+                )
+                Spacer(modifier = Modifier.height(35.dp))
+                ClickableText(
+                    text = "SIGN UP",
+                    onClick = {},
+                    fontSize = 18
                 )
             }
         }

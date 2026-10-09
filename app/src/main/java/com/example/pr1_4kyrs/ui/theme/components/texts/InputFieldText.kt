@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -37,17 +38,14 @@ fun InputFieldText(
     modifier: Modifier = Modifier,
     value: String,
     label: String,
-    onClick: () -> Unit,
     onValueChange: (String) -> Unit,
     visualTransformation: VisualTransformation,
-    placeholder: String,
     trailingIcon: @Composable (() -> Unit)? = {
         Image(painter = painterResource(id = R.drawable.eye_2), contentDescription = "")
     }
 ) {
     Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center
+        modifier = modifier.fillMaxWidth(),
     ) {
         Text(
             text = label,
@@ -56,12 +54,11 @@ fun InputFieldText(
             letterSpacing = 0.sp,
             fontFamily = FontFamily(Font(R.font.nunito_sans))
         )
-        Spacer(modifier = Modifier.height(8.dp))
         OutlinedTextField(
             value = value,
             onValueChange = onValueChange,
             singleLine = true,
-            visualTransformation = VisualTransformation.None,
+            visualTransformation = visualTransformation,
             trailingIcon = trailingIcon,
             colors = OutlinedTextFieldDefaults.colors(
                 focusedContainerColor = White,
@@ -75,9 +72,15 @@ fun InputFieldText(
             shape = RoundedCornerShape(9.dp),
             modifier = Modifier
                 .fillMaxWidth()
-                .height(57.dp)
+                .height(40.dp)
+        )
+        HorizontalDivider(
+            modifier = Modifier.fillMaxWidth(),
+            thickness = 2.dp,
+            color = Color(0xFFE0E0E0)
         )
     }
+
 }
 
 @Preview(showSystemUi = true, showBackground = false)
@@ -88,8 +91,6 @@ private fun InputFieldTextPrev() {
         value = textState,
         onValueChange = { textState = it },
         label = "Вход по email",
-        placeholder = "example@mail.com",
-        onClick = {},
         visualTransformation = VisualTransformation.None
     )
 
